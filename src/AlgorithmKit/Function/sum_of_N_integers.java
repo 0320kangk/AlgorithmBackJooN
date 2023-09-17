@@ -1,4 +1,4 @@
-package Function;
+package AlgorithmKit.Function;
 
 public class sum_of_N_integers {
 

@@ -1,4 +1,4 @@
-package Stack;
+package AlgorithmKit.Stack;
 
 import java.util.Scanner;
 import java.util.Stack;

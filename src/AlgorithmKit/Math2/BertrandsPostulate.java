@@ -1,4 +1,4 @@
-package Math2;
+package AlgorithmKit.Math2;
 
 import java.util.Scanner;
 

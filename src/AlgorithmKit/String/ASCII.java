@@ -1,4 +1,4 @@
-package String;
+package AlgorithmKit.String;
 
 import java.util.Scanner;
 

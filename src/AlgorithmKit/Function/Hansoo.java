@@ -1,4 +1,4 @@
-package Function;
+package AlgorithmKit.Function;
 
 import java.util.Scanner;
 
