@@ -1,4 +1,4 @@
-package Glad.Silver.Contact;
+package Glad.Gold.Contact;
 
 import java.util.Scanner;
 import java.util.regex.Matcher;
