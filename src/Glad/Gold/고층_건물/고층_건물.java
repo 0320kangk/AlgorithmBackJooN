@@ -1,4 +1,4 @@
-package Glad.Silver.고층_건물;
+package Glad.Gold.고층_건물;
 
 import java.util.Scanner;
 
