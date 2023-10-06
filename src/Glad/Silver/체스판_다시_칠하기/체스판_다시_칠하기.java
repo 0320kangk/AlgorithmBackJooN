@@ -1,5 +1,7 @@
 package Glad.Silver.체스판_다시_칠하기;
 
+import Glad.Silver.기타줄.기타줄;
+
 import java.util.Scanner;
 
 public class 체스판_다시_칠하기 {
