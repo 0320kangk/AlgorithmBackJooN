@@ -14,7 +14,6 @@ public class 스위치_켜고_끄기 {
             on[i] = Integer.parseInt(split[i - 1]);
         }
         int stds = sc.nextInt();
-
         sc.nextLine();
         for (int i = 0; i < stds; i++) {
             String s = sc.nextLine();
