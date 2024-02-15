@@ -1,4 +1,4 @@
-package Glad.Silver.팰린드롬_만들기;
+package Glad.Silver.팰린드롬_만들기1;
 
 import java.util.*;
 
