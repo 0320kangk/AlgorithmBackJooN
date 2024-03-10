@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.Scanner;
 
 public class 발전소_설치 {
-
     private static final int INF = 2000001;
     static Point[] points;
     static List<List<Integer>> lines = new ArrayList<>();
