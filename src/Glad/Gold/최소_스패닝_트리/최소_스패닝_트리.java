@@ -19,7 +19,6 @@ public class 최소_스패닝_트리 {
         }
         return findParent(parent, parent[node]);
     }
-
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int V = sc.nextInt();
