@@ -1,4 +1,4 @@
-package Glad.Gold.미로_만들기;
+package Glad.Silver.미로_만들기;
 
 import java.util.Scanner;
 
