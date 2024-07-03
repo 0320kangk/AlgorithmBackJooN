@@ -1,6 +1,5 @@
 package Glad.Silver.단어_수학;
 
-import javax.jws.soap.SOAPBinding;
 import java.util.*;
 
 public class 단어_수학 {

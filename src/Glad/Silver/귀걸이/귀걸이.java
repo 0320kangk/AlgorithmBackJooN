@@ -1,7 +1,5 @@
 package Glad.Silver.귀걸이;
 
-import com.sun.org.apache.xalan.internal.xsltc.runtime.AbstractTranslet;
-
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Scanner;

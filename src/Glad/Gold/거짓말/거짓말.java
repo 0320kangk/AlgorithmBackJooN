@@ -1,6 +1,5 @@
 package Glad.Gold.거짓말;
 
-import javax.jws.soap.SOAPBinding;
 import java.util.*;
 
 public class 거짓말 {

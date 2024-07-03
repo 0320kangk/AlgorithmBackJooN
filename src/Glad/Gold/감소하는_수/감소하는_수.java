@@ -1,6 +1,5 @@
 package Glad.Gold.감소하는_수;
 
-import javax.jws.soap.SOAPBinding;
 import java.util.*;
 
 public class 감소하는_수 {

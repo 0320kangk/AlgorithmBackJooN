@@ -1,6 +1,5 @@
 package Glad.Silver.문자열;
 
-import javax.jws.soap.SOAPBinding;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
