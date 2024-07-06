@@ -15,7 +15,6 @@ public class 수리공_항승 {
             arr[i] = Integer.parseInt(split[i]);
         }
         Arrays.sort(arr);
-        //
         int startIdx = 0;
         int count = N;
         for (int i = 1; i < N; i++) {
