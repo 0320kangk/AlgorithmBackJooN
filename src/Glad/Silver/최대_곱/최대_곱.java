@@ -9,21 +9,16 @@ public class 최대_곱 {
         int S = sc.nextInt();
         int K = sc.nextInt();
 
-        // S를 K로 나누어 기본 값을 구합니다.
-        int q = S / K;
+        int q =  S / K;
         int r = S % K;
-        long result = 1;
-        // r개의 수는 q+1로 설정하고, 나머지는 q로 설정하여 곱합니다.
+        int answer = 1;
+        //r만큼 개산
         for (int i = 0; i < r; i++) {
-            result *= (q + 1);
+            answer *= (q + 1);
         }
-        System.out.println(K);
-        System.out.println(r);
-        // 3, 0 1 2,  3 4 => r=3, k=5
         for (int i = r; i < K; i++) {
-            result *= q;
+            answer *= q;
         }
-
-        System.out.println(result);
+        System.out.println(answer);
     }
 }
