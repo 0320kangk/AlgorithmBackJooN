@@ -51,29 +51,31 @@ public class 특정한_최단_경로 {
 
     }
     public static int dijkstra(int start, int end) {
+
+        //다익스트라
+        //dp + 우선순위 큐
         Arrays.fill(dist, MAX);
         Arrays.fill(visited, false);
-
-        PriorityQueue<Integer[]> pq = new PriorityQueue<>((node1, node2) -> node1[1] - node2[1]);
-        boolean[] visited = new boolean[N + 1];
-        pq.offer(new Integer[]{start, 0});
         dist[start] = 0;
+        PriorityQueue<Integer[]> pq = new PriorityQueue<>((n1, n2) -> n1[1] - n2[1]);
+        pq.add(new Integer[]{start, dist[start]});
 
         while(!pq.isEmpty()){
             Integer[] curNode = pq.poll();
-            int cur = curNode[0];
 
-            if(!visited[cur]){
-                visited[cur] = true;
-
-                for (Integer[] node: lines.get(cur)) {
-                    if(!visited[node[0]] &&
-                            dist[node[0]] > dist[cur] + node[1] ){
-                        dist[node[0]] = dist[cur] + node[1];
-                        pq.add(new Integer[]{node[0], dist[node[0]]});
+            //node 에 인접한 길 모두 확인
+            if(!visited[curNode[0]]){
+                visited[curNode[0]] = true;
+                for (Integer[] nextNode : lines.get(curNode[0])) {
+                    if( !visited[nextNode[0]] &&
+                    dist[nextNode[0]] > dist[curNode[0]] + nextNode[1]){
+                        dist[nextNode[0]] = dist[curNode[0]] + nextNode[1];
+                    pq.add(new Integer[] {nextNode[0], dist[nextNode[0]]});
                     }
                 }
             }
+
+
         }
         return dist[end];
     }
