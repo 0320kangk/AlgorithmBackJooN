@@ -6,8 +6,8 @@ public class 수학 {
         Scanner sc = new Scanner(System.in);
         int sizeD = sc.nextInt();
         int sizeM = sc.nextInt();
-
         int[] Ds = new int[sizeD];
+
         for (int i = 0; i < sizeD; i++) {
             Ds[i] = sc.nextInt();
         }
