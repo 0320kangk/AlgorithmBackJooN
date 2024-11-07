@@ -1,9 +1,6 @@
 package Glad.Gold.게임;
 
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.Scanner;
+import java.util.*;
 
 public class 게임 {
     static int[] dx = {-1, 0, 1, 0};
@@ -17,34 +14,39 @@ public class 게임 {
         int M = sc.nextInt();
         sc.nextLine();
         checkArea(M, sc, map, false);
-        for (int i = 0; i <= 500; i++) {
-            System.out.println(Arrays.toString(map[i]));
-        }
+//        for (int i = 0; i <= 500; i++) {
+//            System.out.println(Arrays.toString(map[i]));
+//        }
 
-        //bfs
-        Queue<Integer[]> q = new LinkedList<>();
-        int dist = 1001;
-        q.add(new Integer[]{0, 0, 0});
-        while (!q.isEmpty()){
-            Integer[] poll = q.poll();
-            if(poll[0] == 500 && poll[1] == 500 && dist > poll[2]){
+        //다익스트라
+        PriorityQueue<Integer[]> pq = new PriorityQueue<>((n1, n2) -> Integer.compare(n1[2], n2[2]));
+        int[][] minLifeLoss = new int[501][501];
+        for (int[] row : minLifeLoss) Arrays.fill(row, 500*500);
+        minLifeLoss[0][0] = 0;
+
+        int dist = -1;
+        pq.add(new Integer[]{0, 0, 0});
+        while (!pq.isEmpty()){
+            Integer[] poll = pq.poll();
+            if(poll[0] == 500 && poll[1] == 500){
                 dist = poll[2];
+                break;
             }
             for (int i = 0; i < 4; i++) {
                 int x = poll[0] + dx[i];
                 int y = poll[1] + dy[i];
-
-                if( (x >= 0 && x <= 500) &&
+                if((x >= 0 && x <= 500) &&
                         (y>= 0 && y<= 500) &&
-                    map[y][x] < 2){
-                    if(map[y][x] == 1) q.add(new Integer[]{x, y, poll[2] + 1});
-                    else q.add(new Integer[]{x, y, poll[2]});
-                    map[y][x] = 3; // 방문
+                    map[y][x] != 2){
+                    int newLife = poll[2] + (map[y][x] == 1 ? 1 : 0);
+                    if(newLife < minLifeLoss[y][x]){
+                        minLifeLoss[y][x] = newLife;
+                        pq.add(new Integer[]{x, y, newLife});
+                    }
 
                 }
             }
         }
-        if(dist == 1001) dist = -1;
         System.out.println(dist);
     }
 
