@@ -4,7 +4,6 @@ public class 가지고_노는_1 {
     public static void main(String[] args) {
         java.util.Scanner sc = new java.util.Scanner(System.in);
         int N = sc.nextInt();
-
         boolean[] visited = new boolean[N];
         int remainder = 1 % N;
         int length = 1;
