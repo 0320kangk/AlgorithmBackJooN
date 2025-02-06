@@ -59,6 +59,5 @@ public class 도시_분할_계획 {
             }
         }
         System.out.println(weight -maxWeight);
->>>>>>> ece59dd3d4d9764d6e92d2b539155c847f948a92
     }
 }
