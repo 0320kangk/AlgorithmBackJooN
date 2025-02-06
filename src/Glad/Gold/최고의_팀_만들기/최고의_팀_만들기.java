@@ -28,6 +28,16 @@ public class 최고의_팀_만들기 {
             int black = Integer.parseInt(split[1]);
         }
 
+        //dp 라고?
+        /*
+        dp [] = value
+        dp[흑][벡] = ?
+
+        값이 머가 되야지?
+        00 11 과 같이 행렬이 같으면 그냥 넘김
+
+         */
+
 
 
 
