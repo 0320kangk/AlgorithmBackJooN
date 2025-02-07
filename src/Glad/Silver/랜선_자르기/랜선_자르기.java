@@ -34,7 +34,5 @@ public class 랜선_자르기 {
             }
         }
         System.out.println(answer);
-
-
     }
 }
