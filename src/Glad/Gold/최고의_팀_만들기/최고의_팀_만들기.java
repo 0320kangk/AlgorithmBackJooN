@@ -25,7 +25,23 @@ public class 최고의_팀_만들기 {
             black[index] = Integer.parseInt(split[1]);
             index++;
         }
+<<<<<<< HEAD
+
+        //dp 라고?
+        /*
+        dp [] = value
+        dp[흑][벡] = ?
+
+        값이 머가 되야지?
+        00 11 과 같이 행렬이 같으면 그냥 넘김
+
+         */
+
+
+
+=======
         System.out.println(solution(0,0,0,index));
+>>>>>>> ece59dd3d4d9764d6e92d2b539155c847f948a92
 
     }
     public static int solution(int i, int wIndex, int bIndex, int N) {
