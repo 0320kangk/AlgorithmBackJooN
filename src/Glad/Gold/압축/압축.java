@@ -9,22 +9,32 @@ public class 압축 {
         Scanner sc = new Scanner(System.in);
         String S = sc.nextLine();
         Stack<String> stack = new Stack<>();
+        int qLength = 0;
         for (int i = 0; i < S.length(); i++) {
             StringBuilder sb = new StringBuilder();
             char c = S.charAt(i);
-            while((c != ')' && c != '(')){
-                    sb.append(c);
-                    c= S.charAt(++i);
+            while(( c >= '0' && c <= '9')){
+                sb.append(c);
+                c= S.charAt(++i);
             }
             if(sb.length() > 0) stack.add(sb.toString());
-            stack.add(String.valueOf(c));
+            if (c == '(') stack.add(String.valueOf(c));
+            else {
+                if(qLength == 0) {
+                    qLength = stack.pop().length();
+                    stack.pop();
+                }
+                String K = stack.pop();
+                int r = Integer.parseInt(K) % 10;
+                qLength *= r;
+                qLength += K.length() - 1;
+            }
+
         }
-        System.out.println(stack);
+        System.out.println(qLength);
 
         /*
-
         71(9) = 79
-
         562(79)
         33(567979)
         3 567979 567979 567979
@@ -44,6 +54,7 @@ public class 압축 {
         right = 9
         7
 
+         567979
 
          */
 
