@@ -1,6 +1,5 @@
 package Glad.Gold.멍멍이_쓰다듬기;
 
-import javax.jws.soap.SOAPBinding;
 import java.util.Scanner;
 
 public class 멍멍이_쓰다듬기 {
