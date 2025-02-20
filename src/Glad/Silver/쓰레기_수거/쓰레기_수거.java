@@ -1,7 +1,8 @@
 package Glad.Silver.쓰레기_수거;
 
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Scanner;
-import java.util.Stack;
 
 public class 쓰레기_수거 {
     public static void main(String[] args) {
@@ -14,21 +15,31 @@ public class 쓰레기_수거 {
             int w = Integer.parseInt(wn[0]);
             int n = Integer.parseInt(wn[1]);
 //            int[][] trashArea = new int[n][2];
-            Stack<Integer[]> stack = new Stack<>();
+            Queue <Integer[]> q = new LinkedList<>();
             for (int i = 0; i < n; i++) {
                 String[] xw = sc.nextLine().split(" ");
-                stack.add(new Integer[]{Integer.parseInt(xw[0]),  Integer.parseInt(xw[1])});
+                q.add(new Integer[]{Integer.parseInt(xw[0]) , Integer.parseInt(xw[1])});
             }
-            int current_weight = 0;
-            while(!stack.isEmpty()){
-                Integer[] peek = stack.peek();
-                if(current_weight + peek[1] <= w) {
-                    w += peek[1];
-                } else {
-                    
-                }
+            int currentWeight = 0;
+            int totalDist = 0;
+            while(!q.isEmpty()){
+                Integer[] peek = q.peek();
+                if(peek[1] + currentWeight <= w ){
+                    Integer[] poll = q.poll();
+                    currentWeight += poll[1];
+                    if( currentWeight == w || q.isEmpty()){
+                        totalDist += poll[0] * 2;
+                        currentWeight = 0;
+                    }
 
+                } else {
+                    totalDist += (peek[0]) * 2;
+                    currentWeight = 0;
+                }
             }
+            //꽉차있는 경우 고려 + 해야함
+            T--;
+            answer = totalDist;
             System.out.println(answer);
         }
     }
